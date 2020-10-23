@@ -90,12 +90,16 @@ function generation.new(sizes)
 	return chuk
 end
 function generation:Destroy()
+	local gege = 0
 	for i = 1, #self.instances do
 		if self.instances[i]~=nil then
+		gege = gege + 1
+		if gege >= 800 then
 		sw()
+		end
 			for ind = 0, 11 do
 				if self.instances[i+ind]~=nil then
-					game:service'Debris':AddItem(self.instances[i+ind],0)
+				game:service'Debris':AddItem(self.instances[i+ind],0)
 				self.instances[i+ind]=nil end
 			end
 	    end
